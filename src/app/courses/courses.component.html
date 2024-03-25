@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="section">
+    <app-search-bar (search)="onSearchCourse($event)"></app-search-bar>
+    <button type="submit" (click)="onAddCourse()" class="btn">
+      Add course
+    </button>
+  </div>
+  <div class="courses">
+    <app-course-card
+      *ngFor="let course of courses ; trackBy: trackByFn"
+      [course]="course"
+      (loadCoursesEvent)="onLoadCourses()"
+    ></app-course-card>
+  </div>
+  <div class="emptyCourses" *ngIf="isCoursesEmpty()">
+    NO DATA. FEEL FREE TO ADD NEW COURSE
+  </div>
+  <div class="loadMore" *ngIf="!isCoursesEmpty()">
+      <button class="loadMore" (click)="onLoadMore()">LOAD MORE</button> 
+  </div>
+</div>

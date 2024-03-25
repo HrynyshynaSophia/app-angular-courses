@@ -1,0 +1,21 @@
+@import "/src/app/styles/variables.scss";
+@import "/src/app/styles/mixins.scss";
+.date__input-container {
+    width: 18vw;
+    .date__input-text {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    input {
+        @include field(36px, 18vw);
+        padding-right: 5px;
+    }
+    .error{
+        color: red;
+        margin-top: 5px;
+        &-input{
+            border-left: 5px solid red; 
+        }
+    }
+}

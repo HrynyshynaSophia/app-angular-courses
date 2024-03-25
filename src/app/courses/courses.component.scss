@@ -1,0 +1,60 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.emptyCourses {
+    padding: 1vw;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.171) 0px 2px 10px;
+    display: flex;
+    line-height: 1.5;
+    justify-content: center;
+    width: 100%;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    .btn {
+        align-self: end;
+    }
+}
+.btn {
+    background-color: rgb(48, 182, 221);
+}
+.btn::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url("../../assets/pics/general/plus.png");
+    background-size: cover;
+    margin-right: 10px;
+}
+button.loadMore {
+    padding: 1vw;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.171) 0px 2px 10px;
+    display: flex;
+    line-height: 1.5;
+    justify-content: center;
+    width: 100%;
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.371) 0px 2px 10px;
+
+    }
+}
+.loader{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    &__item{
+        @include loader($mainGreen);
+    }
+}

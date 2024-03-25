@@ -1,0 +1,39 @@
+<div class="content">
+    <section class="add-edit-course">
+        <form [formGroup]="courseForm" (ngSubmit)="onSubmit()" action="" >
+            <h2 class="add-edit-course__title">New course</h2>
+            <div class="title__input-container">
+                <div class="title__input-text input-text">
+                    <label for="title__input">Title</label>
+                    <span class="required-indicator">* required</span>
+                </div>
+                <input [ngClass]="{'error-input': (title?.invalid && title?.touched) || title?.hasError('maxlength')}" formControlName="title" type="text" id="title__input" placeholder="Text input" name="title" required />
+                <div *ngIf="title?.hasError('required') && title?.touched " class="error">This field is required</div>
+                <div *ngIf="title?.hasError('maxlength')" class="error">The maximum length of the title is 50 characters </div>
+
+            </div>
+            <div class="description__textarea-container">
+                <div class="description__textarea-text input-text">
+                    <label for="description__input">Description</label>
+                    <span class="required-indicator">* required</span>
+                </div>
+                <textarea [ngClass]="{'error-input': (description?.invalid && description?.touched) || description?.hasError('maxlength')}" formControlName="description" type="text" id="description__input" placeholder="Add description" name="description" required ></textarea>
+                <div *ngIf="description?.hasError('required') && description?.touched " class="error">This field is required</div>
+                <div *ngIf="description?.hasError('maxlength')" class="error">The maximum length of the description is 500 characters </div>
+            </div>
+            <div class="date__input">
+            <app-date formControlName="date" ></app-date>
+        </div>
+        <div class="duration__input">
+            <app-duration formControlName="duration" ></app-duration>
+        </div> 
+        <div class="authors__input">
+            <app-authors formControlName="authors" ></app-authors>
+        </div> 
+        <div class="add-edit-course__btns">
+            <button (click)="onCancel() " class="cancel__btn btn">Cancel</button>
+            <button type="submit" class="save__btn btn" [disabled]="test()" >Save</button>
+        </div>
+        </form>
+    </section>
+</div>

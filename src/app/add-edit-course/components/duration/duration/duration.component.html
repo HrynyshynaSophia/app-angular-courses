@@ -1,0 +1,19 @@
+<div class="duration__input-container">
+    <div class="duration__input-text">
+        <label for="duration__input">Duration</label>
+        <span class="required-indicator">* required</span>
+    </div>
+    <div class="duration__durationValue">
+        <input 
+            type="text" id="title__input" 
+            placeholder="Text input" 
+            [ngClass]="{'error-input': customControl.invalid && customControl.touched}" 
+            [formControl]="customControl"
+            required 
+        />
+        <div class="duration_formatted">{{ (customControl.value || 0) | durationPipe }}</div>
+    </div>
+    <div *ngIf="customControl.hasError('required') && customControl.touched" class="error">This field is required</div>
+    <div *ngIf="customControl.hasError('invalidFormat')"  class="error">Only numbers are allowed</div>
+
+</div>

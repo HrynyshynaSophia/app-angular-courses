@@ -1,0 +1,9 @@
+<header class="header"> 
+<div class="header__logo">
+    <app-logo></app-logo>
+</div>
+<div class="header__user">
+    <p class="user__login" *ngIf="isAuth">{{userLogin}} </p>
+    <button type="button" *ngIf="isAuth" class="user__exit" (click)="logout()"> <img src="../../assets/pics/general/log-off.png" alt=""> Log off</button> 
+</div>
+</header>

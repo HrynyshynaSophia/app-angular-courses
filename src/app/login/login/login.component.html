@@ -1,0 +1,26 @@
+<div class="content">
+    <section class="login">
+        <form  [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" action="">
+            <div class="login__header">
+                <h2 class="login__title">Login</h2>
+                <div class="login__error"  *ngIf="error$ | async as error">Wrong e-mail or password</div>
+            </div>
+            <div class="login__input-container">
+                <label for="login__input-text">Email:</label>
+                <span class="required-indicator">* required</span>
+            </div>
+            <input formControlName="email" type="text" id="login__input-text" placeholder="Enter email" name="password" required>
+            <div class="login__input-container">
+                <label for="login__input-text">Password:</label>
+                <span class="required-indicator">* required</span>
+            </div>
+            <input formControlName="password" type="password" id="login__input-pswd" placeholder="Enter password" required class="login__password" name="password"
+                required />
+            <div class="login__row">
+                <a href="" class="login__forgotPswd">Forgot password?</a>
+                <button type="submit" class="login__btn btn" [disabled]="loginForm.invalid">Login</button>
+            </div>
+        </form>
+
+    </section>
+</div>

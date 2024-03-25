@@ -1,0 +1,76 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+$width: 15px;
+$height: 15px;
+.course__card {
+    padding: 2vw;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.171) 0px 2px 10px;
+    display: flex;
+    line-height: 1.5;
+    justify-content: space-between;
+    color: $darkGray;
+    .btn {
+        background-color: rgb(48, 182, 221);
+    }
+    .course__firstCol {
+        padding-right: 1vw;
+        width: 100%;
+        .course__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .course__title {
+                display: flex;
+                align-items: center;
+                .course__star {
+                    margin-left: 10px;
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            .course__details {
+                display: flex;
+                gap: 15px;
+                font-size: 12px;
+                color: $lightGray;
+                height: 100%;
+                align-items: center;
+                .course__duration {
+                    @include beforeIcon("../../assets/pics/general/clock.png", $width, $height);
+                }
+                .course__date {
+                    @include beforeIcon("../../assets/pics/general/calendar.png", $width, $height);
+                }
+            }
+        }
+    }
+    .course__secondCol {
+        display: flex;
+        gap: 10px;
+        height: inherit;
+        align-items: center;
+        .btn {
+            height: 10px;
+            &__edit{
+                @include beforeIcon("../../assets/pics/general/edit.png", $width, $height);
+            }
+            &__delete{
+                @include beforeIcon("../../assets/pics/general/delete.png", $width, $height);
+            }
+        }
+    }
+}
+.isTopRated {
+    background-color: rgb(239, 242, 228);
+}
+.border {
+    &-fresh {
+        border-color: $mainGreen;
+    }
+    &-upcoming {
+        border-color: rgb(48, 182, 221);
+    }
+}

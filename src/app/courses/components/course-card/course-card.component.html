@@ -1,0 +1,22 @@
+<section [ngClass]="{ isTopRated: course.isTopRated }" class="course__card border">
+    <div class="course__firstCol">
+        <div class="course__row">
+            <h1 class="course__title">
+                {{ course.name | uppercase }}
+                <img class="course__star" *ngIf="course.isTopRated" src="../../../../assets/pics/general/star.png"
+                    alt="" />
+            </h1>
+            <div class="course__details">
+                <p class="course__duration">{{ course.length | durationPipe }}</p>
+                <p class="course__date">{{ course.date | date : "MM/dd/yyyy" }}</p>
+            </div>
+        </div>
+        <p class="course__description">
+            {{ course.description }}
+        </p>
+    </div>
+    <div class="course__secondCol">
+        <button class="btn btn__edit" (click)="onEdit()">Edit</button>
+        <button class="btn btn__delete" (click)="onDeleteCourse()">Delete</button>
+    </div>
+</section>

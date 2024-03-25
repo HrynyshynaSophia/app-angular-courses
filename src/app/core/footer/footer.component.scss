@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+.footer{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    padding: $padding;
+    background-color: $darkGray;
+    
+    p{
+        color: $lightGray;
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,9 @@
+<app-loading-block *ngIf="loadingService.isLoading"></app-loading-block>
+<div class="wrapper">
+    <app-header [isAuth]="isAuth" ></app-header>
+    <app-breadcrumbs [isAuth]="isAuth" *appIfAuthenticated="isAuth"></app-breadcrumbs>
+    <section class="content">
+        <router-outlet></router-outlet>
+    </section>
+    <app-footer></app-footer>
+</div>

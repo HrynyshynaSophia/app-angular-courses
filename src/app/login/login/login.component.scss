@@ -1,0 +1,71 @@
+@import "/src/app/styles/variables.scss";
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    button:disabled {
+        background-color: $gray;
+    }
+    
+    .login {
+        background-color: white;
+        padding: 25px 30px;
+        width: 368px;
+        margin: 0 auto;
+        font-family: Calibri;
+        font-weight: 500;
+        color: $darkGray;
+        margin-top: 13vh;
+        border-radius: 6px;
+        box-shadow: 0 1px 2px 0 rgba(29, 30, 38, 0.1), 0 2px 10px 0 rgba(29, 30, 38, 0.15);
+        &__header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__error{
+            color: red;
+        }
+        &__btn{
+            background-color: $greenBtn;
+            color: white;
+            padding: 5px 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .login__input-container {
+                display: flex;
+                justify-content: space-between;
+                .required-indicator {
+                    font-size: 12px;
+                }
+            }
+            input {
+                border-radius: 3px;
+                border: 1px solid #ced0db;
+                background: #ffffff;
+                height: 36px;
+                padding-left: 7px;
+                &::placeholder {
+                    color: $gray;
+                }
+            }
+            .login__row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .login__forgotPswd {
+                    color: #5681ee;
+                    text-decoration: underline;
+                    font-size: 12px;
+                }
+            }
+            &__title{
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

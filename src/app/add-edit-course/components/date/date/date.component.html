@@ -1,0 +1,16 @@
+<div class="date__input-container">
+  <div class="date__input-text">
+    <label for="date__input">Date</label>
+    <span class="required-indicator">* required</span>
+  </div>
+  <input
+    type="date"
+    id="date__input"
+    placeholder="Date input"
+    required
+    [formControl]="dateControl" 
+    [ngClass]="{'error-input': dateControl.invalid && dateControl.touched }"
+  />
+  <div *ngIf="dateControl?.hasError('required') && dateControl?.touched" class="error">This field is required</div>
+
+</div>

@@ -1,0 +1,59 @@
+@import "/src/app/styles/variables.scss";
+@import "/src/app/styles/mixins.scss";
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    .add-edit-course {
+        background-color: white;
+        padding: 25px 30px;
+        width: 60vw;
+        margin: 0 auto;
+        font-family: Calibri;
+        font-weight: 500;
+        color: $darkGray;
+        margin-top: 5vh;
+        border-radius: 6px;
+        box-shadow: 0 1px 2px 0 rgba(29, 30, 38, 0.1), 0 2px 10px 0 rgba(29, 30, 38, 0.15);
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            input {
+                @include field(36px, 100%);
+            }
+            textarea {
+                @include field(100px, 100%);
+                padding-top: 7px;
+            }
+            .input-text {
+                margin-bottom: 5px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .add-edit-course__btns {
+                display: flex;
+                gap: 10px;
+                justify-content: end;
+                .save__btn {
+                    background-color: $mainGreen;
+                }
+                .cancel__btn {
+                    color: $gray;
+                }
+                button:disabled {
+                    background-color: $gray;
+                }
+            }
+            .error{
+                color: red;
+                margin-top: 5px;
+            }
+            .error-input{
+                border-left: 5px solid red;
+            }
+        }
+    }
+}

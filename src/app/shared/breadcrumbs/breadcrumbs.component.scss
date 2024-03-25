@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+.breadcrumbs {
+    padding: $padding;
+    background-color: white;
+    display: flex;
+    &__courses {
+        color: $darkGray;
+        font-weight: bold;
+        &:hover {
+            color: $lightBlue;
+        }
+    }
+    &__courses.name-visible {
+        color: $gray;
+        font-weight: normal;
+        &:hover {
+            color: $lightBlue;
+        }
+    }
+    &__name {
+        font-weight: bold;
+        color: $darkGray;
+    }
+}

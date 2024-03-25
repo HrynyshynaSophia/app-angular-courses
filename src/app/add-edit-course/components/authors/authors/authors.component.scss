@@ -1,0 +1,64 @@
+@import "/src/app/styles/variables.scss";
+@import "/src/app/styles/mixins.scss";
+.authors__input-text {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.authors-list {
+    width: 100%;
+}
+.chip-and-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+mat-chip-row{
+    border-radius: 0px;
+}
+mat-chip-grid{
+    background-color: white;
+}
+.mdc-text-field--filled{
+    background-color: white;
+}
+form{
+    background-color: white;
+}
+.custom-input{
+    background-color: $greenBorder;
+}
+.mdc-line-ripple{
+    background-color: white;
+}
+.example-chip-list .mat-form-field-wrapper {
+    background-color: transparent !important;
+  }
+  .example-chip-list .mat-form-field-flex {
+    height: 32px; /* Змініть висоту на бажану */
+  }
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #fff;
+    // background-clip: padding-box;
+    // border: 1px solid #bdbdbd;
+    // border-radius: 0.25rem;
+    // transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  .mat-mdc-form-field-focus-overlay {
+    /* background-color: rgba(0,0,0,.87); */
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid red;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+  }
+  .mat-mdc-form-field {
+    margin: 5px 0 20px 0;
+  }
+  .mdc-text-field--filled .mdc-line-ripple::after {
+    border-bottom-color: var(--mdc-theme-primary, #66a300);
+  }
+  .mdc-line-ripple .ng-tns-c1205077789-0 .ng-star-inserted{
+    border-bottom-color: var(--mdc-theme-primary, #66a300);
+
+  }
