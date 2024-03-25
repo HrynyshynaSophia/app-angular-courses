@@ -52,7 +52,7 @@ export class AddEditCourseComponent implements OnInit, AfterViewInit {
       this.allAuthors = authors;
     });
     this.courseForm.get('authors')?.valueChanges.subscribe((value) => {
-      this.authorsComponent.selectedAuthorsNames = value;
+      this.authorsComponent.selectedAuthorsNames.push(value);
     });
   }
 

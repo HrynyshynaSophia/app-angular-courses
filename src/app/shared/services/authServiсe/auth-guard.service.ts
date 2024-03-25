@@ -12,7 +12,6 @@ export class AuthGuardService implements CanActivate {
     this.store.select(selectIsAuth).subscribe();
     return this.store.select(selectIsAuth).pipe(
       map((isAuth) => {
-        console.log('aaa')
         if (isAuth) {
           return true;
         } else {

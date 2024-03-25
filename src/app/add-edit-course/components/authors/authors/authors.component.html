@@ -22,7 +22,7 @@
             (matChipInputTokenEnd)="add($event)"
             />
         </mat-chip-grid>
-        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected()">
             <mat-option *ngFor="let author of filteredAuthors | async" [value]="author">
                 {{author}}
             </mat-option>

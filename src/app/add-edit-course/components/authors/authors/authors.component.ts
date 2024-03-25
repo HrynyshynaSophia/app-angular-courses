@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import {
   ChangeDetectorRef,
@@ -21,7 +22,6 @@ import {
   ValidationErrors,
   Validator,
 } from '@angular/forms';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -80,7 +80,6 @@ export class AuthorsComponent
 
   ngOnInit(): void {
     this.selectedAuthorsNames = [];
-
     this.store.select(selectAuthors).subscribe((authors) => {
       this.authorsNames = [...authors.map((author) => author.name)];
       this.filteredAuthors = this.authorCtrl.valueChanges.pipe(
@@ -99,6 +98,8 @@ export class AuthorsComponent
         this.cdr.detectChanges();
       }
     });
+    
+
   }
   validate(): ValidationErrors | null {
     return this.authorCtrl.errors;
@@ -116,18 +117,11 @@ export class AuthorsComponent
     if (index >= 0) {
       this.selectedAuthorsNames.splice(index, 1);
       this.announcer.announce(`Removed ${author}`);
-      this.onChange(this.selectedAuthorsNames);
       this.onTouched();
     }
   }
 
-  selected(event: MatAutocompleteSelectedEvent): void {
-    this.selectedAuthorsNames.push(event.option.viewValue);
-    this.authorInput.nativeElement.value = '';
-    this.authorCtrl.setValue(null);
-    this.onChange(this.selectedAuthorsNames);
-    this.onTouched();
-  }
+  selected(): void { }
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -139,7 +133,7 @@ export class AuthorsComponent
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
     return this.authorsNames.filter((author) =>
-      author.toLowerCase().includes(filterValue)
+      !author.toLowerCase().includes(filterValue)
     );
   }
   private requiredValidator(): { [key: string]: any } | null {
